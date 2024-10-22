@@ -10,7 +10,7 @@ Esse desafio tem como objetivo ler os dados de uma api e salvar em um banco de d
 ### Instalação
 1. Clone este repositório
    ```
-   $ git clone
+   $ git clone https://github.com/dlucasafj/desafio_tecnico_luizalabs
    ```
 2. Renomeie o arquivo .env.example para .env e preencha as informações.
 3. Instale o virtual-env
@@ -19,7 +19,7 @@ Esse desafio tem como objetivo ler os dados de uma api e salvar em um banco de d
    ```
 4. Crie um ambiente virtual
    ```shell
-   $ python -m virtualenv venv
+   $ python3 -m virtualenv venv
    ```
 5. Ative o ambiente virtual:
 
@@ -36,4 +36,8 @@ Esse desafio tem como objetivo ler os dados de uma api e salvar em um banco de d
 Execute o arquivo com o seguinte comando no seu terminal:
 ```shell
   spark-submit --jars ./database_drive/postgresql-42.7.4.jar main.py
+```
+Para executar os testes digite o seguinte comando no terminal: 
+```shell
+  pytest test_dataframe.py
 ```
