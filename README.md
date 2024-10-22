@@ -5,6 +5,8 @@ Esse desafio tem como objetivo ler os dados de uma api e salvar em um banco de d
 ## Pré-requisitos
 - Python 3.10
 - Postgres
+
+É necessário estar com o banco de dados local configurado antes de executar a aplicação
   
 
 ### Instalação
