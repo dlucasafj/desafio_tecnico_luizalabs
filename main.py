@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 from controllers.api import get_data
 from controllers.clean_data import remove_more_two_spaces, remove_spaces_start_end, remove_null_values, filter_values_higher_or_equal
-from controllers.database import get_properties
+from controllers.settings_db import get_settings
 from controllers.save_db import persists_database
 from controllers.spark import CreateSparkSession
 load_dotenv()
@@ -13,11 +13,10 @@ def main() -> int:
     print("*** ETAPA 01 ***")
     data = get_data() # Obtém os dados da API
 
-    session_spark = CreateSparkSession('Desafio Técnico') # Cria uma sessão Spark
     
-
     print("*** ETAPA 02 *** \n")
     
+    session_spark = CreateSparkSession('Desafio Técnico') # Cria uma sessão Spark
     df = session_spark.createDataFrame(data) # Cria um dataFrame
 
     print('** Data Frame obtido dos dados da API **')
@@ -60,8 +59,8 @@ def main() -> int:
 
     print("*** ETAPA 03 e 04 \n")
     print("*** Dividindo os dados e Salvando no Banco***")
-    data = get_properties()
-    persists_database(df_trated,data)
+    data = get_settings()
+    persists_database(df_trated, data)
 
     return 0
 

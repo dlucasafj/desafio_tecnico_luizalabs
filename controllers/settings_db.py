@@ -1,8 +1,9 @@
 import os
-'''
-    Retorna as propriedades para o spark se conectar com o Banco de dados
-'''
-def get_properties() -> dict:
+
+def get_settings() -> dict:
+    '''
+        Retorna as propriedades para o spark se conectar com o Banco de dados
+    '''
     data = {
         'url':f"jdbc:postgresql://{os.getenv('DB_HOSTNAME')}:{os.getenv('DB_PORT')}/{os.getenv('DB_DATABASE')}",
         'properties':{

@@ -29,7 +29,7 @@ class CreateSparkSession:
 
     def trated_data(self, df:DataFrame) -> DataFrame:
         '''
-            Separa os dados da coluna rating adicionando duas novas colunas no DataFrame e 
+            Separa os dados da coluna rating adicionando duas novas colunas (rating_count e rating_rate) no DataFrame e 
             removendo a coluna rating
         '''
         df_trated = df.withColumn("rating_count", col("rating.count")) \
